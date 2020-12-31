@@ -11,7 +11,7 @@ import {
 } from '@ant-design/icons';
 import styles from './layout.module.scss';
 
-const { Header, Sider, Content } = AntLayout;
+const { Header, Sider, Content, Footer } = AntLayout;
 
 const Layout:FC = ({children}) => {
 	const [collapsed, setCollapsed] = useState<boolean>(true);
@@ -20,10 +20,10 @@ const Layout:FC = ({children}) => {
 	return (
 		<>
 			{isLoading && <Loader/>}
-			<AntLayout>
+			<AntLayout className={styles.layout}>
         <Sider className={styles.sider} trigger={null} collapsible collapsed={collapsed}>
           <div className="logo" />
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+          <Menu mode="inline" defaultSelectedKeys={['1']}>
             <Menu.Item key="1" icon={<UserOutlined />}>
               nav 1
             </Menu.Item>
@@ -41,9 +41,10 @@ const Layout:FC = ({children}) => {
 							{collapsed ? <MenuUnfoldOutlined/> : <MenuFoldOutlined/>}
 						</span>
           </Header>
-          <Content className={styles.content}>
+          <Content className={styles.layout__content}>
             {children}
           </Content>
+          <Footer style={{ textAlign: 'center' }}>2000 copy</Footer>
         </AntLayout>
       </AntLayout>
 		</>
