@@ -1,14 +1,180 @@
 [
   {
     "id": "1",
-    "title": "Code",
-    "code": "b97ada709cf3339f7f157d8a4d420867",
-    "paragraph": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quam aut et magni voluptatibus. Quod non inventore atque modi autem, nisi neque totam at architecto minima similique fugit obcaecati commodi?"
+    "title": "Difference between let & var ?",
+    "render": [
+      {
+        "ulist":[
+          "A variable defined using a var statement is known throughout the function it is defined in, from the start of the function. (*)",
+          "A variable defined using a let statement is only known in the block it is defined in, from the moment it is defined onward. (**)"   
+        ],
+        "code":"bd46def42b9675c5dd80be33c4dbe72c"
+      }
+    ]
   },
   {
     "id": "2",
-    "title": "Code 2",
-    "code": "b97ada709cf3339f7f157d8a4d420867",
-    "paragraph": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quam aut et magni voluptatibus. Quod non inventore atque modi autem, nisi neque totam at architecto minima similique fugit obcaecati commodi?"
+    "title": "Pure components in react ?",
+    "render": [
+      {
+        "paragraph": "*`React.PureComponent`* is exactly the same as *`React.Component`* except that it handles the `shouldComponentUpdate()` method for you. When props or state changes, *PureComponent* will do a shallow comparison on both props and state. *Component* on the other hand won't compare current props and state to next out of the box. Thus, the component will re-render by default whenever `shouldComponentUpdate` is called."
+      },
+      {
+        "paragraph": "React Components re-renders in the following scenarios:",
+        "ulist": [
+          "“setState” is called in Component",
+          "“props” values are updated",
+          "this.forceUpdate() is called"
+        ]
+      },
+      {
+        "paragraph": "In the case of Pure Components, the React components do not re-render blindly without considering the updated values of React “props” and “state”. If updated values are the same as previous values, render is not triggered.",
+        "code": "450e5feb767a5fc476c08d2615437fd3"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Controlled & Uncontrolled components ?",
+    "render": [
+      {
+        "ulist":[
+          "A Controlled Component is one that takes its current value through props and notifies changes through callbacks like onChange. A parent component *controls* it by handling the callback and managing its own state and passing the new values as props to the controlled component. You could also call this a *dumb component*.",
+          "A Uncontrolled Component is one that stores its own state internally, and you query the DOM using a ref to find its current value when you need it. This is a bit more like traditional HTML."   
+        ]
+      },
+      {
+        "paragraph": "Most native React form components support both controlled and uncontrolled usage:",
+        "code": "4a2dc4e9330d3ee6ca0f2798caa5a39e"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "title": "What are the major features of React ?",
+    "render": [
+      {
+        "paragraph": "The major features of React are:",
+        "ulist": [
+          "It uses **VirtualDOM** instead RealDOM considering that RealDOM manipulations are expensive.",
+          "Supports **server-side** rendering.",
+          "Follows **Unidirectional** data flow or data binding.",
+          "Uses **reusable/composable** UI components to develop the view."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "title": "What is state in React?",
+    "render": [
+      {
+        "paragraph": "State of a component is an object that holds some information that may change over the lifetime of the component. We should always try to make our state as simple as possible and minimize the number of stateful components. Let's create an user component with message state,",
+        "code": "2c5de942430c759d45e9a6ec757f74ac"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "title": "What are props in React ?",
+    "render": [
+      {
+        "paragraph": "Props are inputs to components. They are single values or objects containing a set of values that are passed to components on creation using a naming convention similar to HTML-tag attributes. They are data passed down from a parent component to a child component."
+      },
+      {
+        "paragraph": "The primary purpose of props in React is to provide following component functionality :",
+        "ulist": [
+          "Pass custom data to your component.",
+          "Trigger state changes.",
+          "Use via `this.props.reactProp` inside component's `render()` method"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "title": "What is the use of refs ?",
+    "render": [
+      {
+        "paragraph": "The *ref* is used to return a reference to the element. They *should be avoided* in most cases, however, they can be useful when you need a direct access to the DOM element or an instance of a component.",
+        "code": "584338ec5c6f9f7d23d0488303da33b1"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "title": "What is the purpose of using super constructor with props argument?",
+    "render": [
+      {
+        "paragraph": "A child class constructor cannot make use of `this` reference until `super()` method has been called. The same applies for ES6 sub-classes as well. The main reason of passing props parameter to `super()` call is to access `this.props` in your child constructors."
+      },
+      {
+        "paragraph": "Passing props:",
+        "code": "d635829e669b03ce878c5f5711326212"
+      },
+      {
+        "paragraph": "The above code snippets reveals that `this.props` is different only within the constructor. It would be the same outside the constructor."
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "title": "Closure in Javascript ?",
+    "render": [
+      {
+        "paragraph": "Closure means that an inner function always has access to the vars and parameters of its outer function, even after the outer function has returned.",
+        "code": "c36906a7764c80dfc0e8a02268ba2d0b"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "title": "Generator functions ?",
+    "render": [
+      {
+        "paragraph": "Regular functions return only one, single value (or nothing). <br/> Generators can return (“yield”) multiple values, one after another, on-demand. They work great with iterables, allowing to create data streams with ease.",
+        "code": "23f86dc407da864ee82756901af4cd7e"
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "title": "Promise ?",
+    "render": [
+      {
+        "paragraph": "`A promise is an object that may produce a single value some time in the future:` either a resolved value, or a reason that it’s not resolved (e.g., a network error occurred). A promise may be in one of 3 possible states: **fulfilled**, **rejected**, or **pending**. Promise users can attach callbacks to handle the fulfilled value or the reason for rejection.<br/> Promise execution is asynchronous, which means that it's executed, but the program won't wait until it's finished to continue with the rest of the code.",
+        "code": "a89e48aba56814947f3ed0aeed742389"
+      },
+      {
+        "paragraph": "A promise can have 3 states which are the following:",
+        "ulist": [
+          "**Pending:** This is the initial state of the promise, the promise is now waiting for either to be resolved or rejected. For example, when are reaching out to the web with an AJAX request and wrapping the request in a promise. Then the promise will be pending in the time window in which the request is not returned.",
+          "**Fulfilled:** When the operation is completed succesfully, the promise is fulfilled. For example, when we are reaching out to be web using AJAX for some JSON data and wrapping it in a promise. When we are succesfully getting data back the promise is said to be fulfilled.",
+          "**Rejected:** When the operation has failed, the promise is rejected. For example, when we are reaching out to be web using AJAX for some JSON data and wrapping it in a promise. When we are getting a 404 error the promise has been rejected."
+        ]
+      },
+      {
+        "paragraph": "The *then* callback receives as a first argument the resolved value (the string 'success' in this case). <br/> The *catch* callback receives as a first argument the rejected value (the string 'Error' in this case). <br/> The *finally* method receives a callback which is executed on both promise fulfillment and rejection. Here we can write 'cleanup' code which need to be executed always regardless of promise outcome."
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "title": "Clone Objects ?",
+    "render": [
+      {
+        "code": "a383b9d004e00f0e164900bb0a693674"
+      }
+    ]
+  },
+  {
+    "id": "",
+    "title": "",
+    "render": [
+      {
+        "paragraph": ""
+      }
+    ]
   }
 ]
+

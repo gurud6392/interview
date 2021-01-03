@@ -1,0 +1,11 @@
+@import '../../styles/vars.scss';
+
+.interviewList {
+  padding: 5rem;
+
+  &__paragraph {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    text-align: justify;
+  }
+}
