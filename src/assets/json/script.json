@@ -122,8 +122,11 @@
     "title": "Closure in Javascript ?",
     "render": [
       {
-        "paragraph": "Closure means that an inner function always has access to the vars and parameters of its outer function, even after the outer function has returned.",
+        "paragraph": "A closure is a function that has access to its outer function scope even after the outer function has returned.",
         "code": "c36906a7764c80dfc0e8a02268ba2d0b"
+      },
+      {
+        "paragraph": "We are storing the anonymous inner function returned by `getCounter` function into the `count` variable. As `count` function is now a *closure*, it can access the `counter` variable of `getCounter` function even after `getCounter()` has returned."
       }
     ]
   },

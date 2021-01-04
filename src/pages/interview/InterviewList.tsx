@@ -81,26 +81,27 @@ const InterviewList = () => {
 
   return (
     <Layout className={styles.interviewList}>
-      {getRenderedCode()}
+      <div className={styles.interviewList__inner}>
+        {getRenderedCode()}
+      </div>
       <Row justify='space-between'>
-        
-          <Col>
-          {pagination.prev ? 
-            <Link to={`/interview/js/${pagination.prev.id}`}><LeftOutlined/> {replaceQuestion(pagination.prev.title)}</Link>
-            :
-            <Button type='link' disabled><LeftOutlined/> Previous</Button>
-          }
-          </Col>
-
-        
-          <Col>
-          {pagination.next ? 
-            <Link to={`/interview/js/${pagination.next.id}`}>{replaceQuestion(pagination.next.title)} <RightOutlined/></Link>
+        <Col>
+        {pagination.prev ? 
+          <Link to={`/interview/js/${pagination.prev.id}`}><LeftOutlined/> {replaceQuestion(pagination.prev.title)}</Link>
           :
-            <Button type='link' disabled>Next <RightOutlined/></Button>
-          }
-          </Col>
-      </Row>
+          <Button type='link' disabled><LeftOutlined/> Previous</Button>
+        }
+        </Col>
+
+      
+        <Col>
+        {pagination.next ? 
+          <Link to={`/interview/js/${pagination.next.id}`}>{replaceQuestion(pagination.next.title)} <RightOutlined/></Link>
+        :
+          <Button type='link' disabled>Next <RightOutlined/></Button>
+        }
+        </Col>
+    </Row>
     </Layout>
   )
 }

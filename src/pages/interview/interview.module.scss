@@ -8,4 +8,11 @@
     margin-bottom: 0.5rem;
     text-align: justify;
   }
+
+  &__inner {
+    padding: 2rem;
+    background-color: $white;
+    box-shadow: 0 0 5px $gray;
+    border-radius: 2px;
+  }
 }
