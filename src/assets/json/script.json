@@ -5,10 +5,29 @@
     "render": [
       {
         "ulist":[
-          "A variable defined using a var statement is known throughout the function it is defined in, from the start of the function. (*)",
-          "A variable defined using a let statement is only known in the block it is defined in, from the moment it is defined onward. (**)"   
+          "`let` gives you the privilege to declare variables that are limited in scope to the **block**, statement of expression unlike `var`.",
+          "`var` is rather a keyword which defines a variable globally regardless of *block* scope."   
         ],
+        "subtitle": ["Global window object", 3],
+        "paragraph": "Even if the `let` variable is defined as same as `var` variable globally, the `let` variable will not be added to the global window object.",
         "code":"bd46def42b9675c5dd80be33c4dbe72c"
+      },
+      {
+        "paragraph": "Thus `let` variables cannot be accessed in the window object because they cannot be globally accessed."
+      },
+      {
+        "subtitle": ["Block", 3],
+        "paragraph": "`let` variables are usually used when there is a limited use of those variables. Say, in for loops, while loops or inside the scope of if conditions etc. <br/>Basically, where ever the scope of the variable has to be limited.",
+        "code": "40c841cce0f4b7c8fdc8590714d0b736"
+      },
+      {
+        "subtitle": ["Redeclaration", 3],
+        "paragraph": "`let` variables cannot be re-declared while `var` variable can be re-declared in the same scope.",
+        "code": "b4d823bcfd2ec176d5efbf17f578ddce"
+      },
+      {
+        "subtitle": ["Function", 3],
+        "paragraph": "*let* and *var* variables work the same way when used in a function block."
       }
     ]
   },
@@ -30,6 +49,21 @@
       {
         "paragraph": "In the case of Pure Components, the React components do not re-render blindly without considering the updated values of React “props” and “state”. If updated values are the same as previous values, render is not triggered.",
         "code": "450e5feb767a5fc476c08d2615437fd3"
+      },
+      {
+        "paragraph": "We can convert component to pure component as below:",
+        "ulist":[
+          "For class components react provides `React.PureComponent` base class.",
+          "For Functional component react provides `React.memo` HOC (Higher Order Component)."
+        ]
+      },
+      {
+        "subtitle": [" React.PureComponent ", 3],
+        "paragraph": "When a class component extends `React.PureComponent` base class then React treated the component as Pure component. The major difference between `React.Component` class and `React.PureComponent` is the implementation of `shouldComponentUpdate()`. In `React.Component` `shouldComponentUpdate()` will always returns true on the other hand in `React.PureComponent` it will compare the current state and props with new state and props.<br/>As `React.PureComponent` implements `shouldComponentUpdate()` method for Pure component which will improve performance and optimize rendering. But the point here is that it is only doing the shallow comparison so if you have very complex nested object then it may give you false result."
+      },
+      {
+        "subtitle": [" React.memo ", 3],
+        "paragraph": "`React.memo` is nothing but a Higher Order function (HOC). `React.memo` is similar to `React.PureComponent` and it is for functional component instead of class component. You can wrap your functional component when component renders same output with same props passed. Due to this it will improve the performance and optimize the rendering.<br/>`React.memo` only works when props of components changes. It means that if you are using state using useState hook in functional then for every state change it will render the component. Similar to React.PureComponent it is doing shallow comparison of props. "
       }
     ]
   },
@@ -61,6 +95,29 @@
           "Follows **Unidirectional** data flow or data binding.",
           "Uses **reusable/composable** UI components to develop the view."
         ]
+      },
+      {
+        "subtitle": ["Real DOM", 3],
+        "paragraph": "First things first, DOM stands for “Document Object Model”. The DOM in simple words represents the UI of your application. Everytime there is a change in the state of your application UI, the DOM gets updated to represent that change. Now the catch is frequently manipulating the DOM affects performance, making it slow."
+      },
+      {
+        "subtitle": ["What makes DOM manipulation slow?", 5],
+        "paragraph": "The DOM is represented as a tree data structure. Because of that, the changes and updates to the DOM are fast. But after the change, the updated element and it’s children have to be re-rendered to update the application UI. The re-rendering or re-painting of the UI is what makes it slow. Therefore, the more UI components you have, the more expensive the DOM updates could be, since they would need to be re-rendered for every DOM update."
+      },
+      {
+        "subtitle": ["Virtual DOM", 3],
+        "paragraph": "When new elements are added to the UI, a virtual DOM, which is represented as a tree is created. Each element is a node on this tree. If the state of any of these elements changes, a new virtual DOM tree is created. This tree is then compared or “diffed” with the previous virtual DOM tree.<br/>   Once this is done, the virtual DOM calculates the best possible method to make these changes to the real DOM. This ensures that there are minimal operations on the real DOM. Hence, reducing the performance cost of updating the real DOM."
+      },
+      {
+        "subtitle": ["Unidirectional", 3],
+        "paragraph": "In general this concept means that data has one, and only one, way to be transferred to other parts of the application.",
+        "ulist": [         
+          "state is passed to the view and to child components",
+          "actions are triggered by the view",
+          "actions can update the state",
+          "the state change is passed to the view and to child components"
+        ],
+        "image": "4_0.png"
       }
     ]
   },
@@ -171,11 +228,18 @@
     ]
   },
   {
-    "id": "",
-    "title": "",
+    "id": "13",
+    "title": "The const keyword",
     "render": [
       {
-        "paragraph": ""
+        "paragraph": "If a variable is defined using the `const` keyword, its scope is limited to the **block scope**. In addition the variable cannot be reassigned to a different value."
+      },
+      {
+        "paragraph": "Note that it is important to understand that `const` does NOT mean that the value is fixed and immutable. This is a common misunderstanding amongst many Javascript developers, and they incorrectly mentioned that a value defined by the `const` keyword is immutable (i.e. it cannot be changed)."
+      },
+      {
+        "paragraph": "In the following example we can show that the value of the variable defined within the `const` keyword is mutable, i.e. it can be changed.",
+        "code": "2b78e5f33f3fe938d482dee2147158e3"
       }
     ]
   }

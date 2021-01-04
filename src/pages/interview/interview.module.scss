@@ -15,4 +15,20 @@
     box-shadow: 0 0 5px $gray;
     border-radius: 2px;
   }
+
+  &__nextPrevRow {
+    padding-top: 2rem;
+  }
+
+  &__imageDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    :global {
+      img {
+        max-height: 450px;        
+      }
+    }
+  }
 }
