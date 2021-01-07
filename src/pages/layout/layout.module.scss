@@ -4,14 +4,45 @@
   &__content:not(c) {
     min-height: 95vh;
   }
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-bottom: 1px solid $gray;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
 }
 
 .header {
-  background-color: $primary-blue;
   color: $white;
+  :global {
+    .ant-menu-dark {
+      background-color: $dark-1 !important;
+    }
+    .ant-menu.ant-menu-dark .ant-menu-item-selected,
+    .ant-menu-dark.ant-menu-horizontal > .ant-menu-item:hover {
+      background-color: $dark-hover-1;
+    }
+  }
 }
 
 .sider {
-  background-color: $primary-blue;
   color: $white;
+  :global {
+    .ant-menu-dark {
+      background-color: $dark-1 !important;
+    }
+    .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected{
+      background-color: $dark-hover-1;
+    }
+  }
+}
+
+:global {
+  .ant-layout-sider:not(c){
+    background-color: $dark-1;
+  }
 }

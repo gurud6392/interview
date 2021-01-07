@@ -7,6 +7,12 @@
     font-size: 1rem;
     margin-bottom: 0.5rem;
     text-align: justify;
+
+    :global {
+      br {
+        margin-bottom: 0.5rem;
+      }
+    }
   }
 
   &__inner {
@@ -31,4 +37,8 @@
       }
     }
   }
+}
+
+.interview {
+  padding: 5rem;
 }
