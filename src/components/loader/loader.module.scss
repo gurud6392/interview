@@ -1,0 +1,27 @@
+@import '../../styles/vars.scss';
+
+.loader {
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  & > div {
+    font-size: 2rem;
+    color: $white;
+    margin-top: 2rem;
+  }
+
+  :global {
+    .anticon {
+      font-size: 3rem;
+      color: $white;
+    }
+  }
+}
